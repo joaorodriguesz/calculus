@@ -26,14 +26,14 @@ function updateTable() {
     const pointsDiv = document.getElementById('points');
     let table = '';
     if (xValues.length > 0) {
-        table = '<table class="table table-striped table-hover">';
+        table = '<table class="table table-sm table-hover">';
         table += '<thead>';
         table += '<tr>';
         table += '<th>X</th>';
         table += '<th>Y</th>';
         table += '<th>X*Y</th>';
         table += '<th>X²</th>';
-        table += '<th></th>';
+        // table += '<th></th>';
         table += '</tr>';
         table += '</thead>';
         table += '<tbody>';
@@ -50,7 +50,7 @@ function updateTable() {
             table += `<td>${yValues[i]}</td>`;
             table += `<td>${xy.toFixed(2)}</td>`;
             table += `<td>${x2.toFixed(2)}</td>`;
-            table += `<td><button class="btn btn-danger btn-sm" onclick="removePoint(${i})">Excluir</button></td>`;
+            // table += `<td><button class="btn btn-danger btn-sm" onclick="removePoint(${i})">Remover</button></td>`;
             table += '</tr>';
         }
 
@@ -60,7 +60,7 @@ function updateTable() {
             table += `<td><strong>∑Y = ${sumY.toFixed(2)}</strong></td>`;
             table += `<td><strong>∑XY = ${sumXY.toFixed(2)}</strong></td>`;
             table += `<td><strong>∑X² = ${sumX2.toFixed(2)}</strong></td>`;
-            table += `<td></td>`;
+            // table += `<td></td>`;
             table += '</tr>';
         }
 
@@ -96,7 +96,7 @@ function fitFirstDegree() {
     const a = result.equation[0];
     const b = result.equation[1];
 
-    document.getElementById('result').innerText = `Ajuste de Primeiro Grau: y = ${a.toFixed(2)}x + ${b.toFixed(2)}`;
+    document.getElementById('result').innerText = `Primeiro Grau: y = ${a.toFixed(2)}x + ${b.toFixed(2)}`;
 
     clearCanvas();
     drawGrid();
@@ -117,7 +117,7 @@ function fitSecondDegree() {
     const b = result.equation[1];
     const c = result.equation[2];
 
-    document.getElementById('result').innerText = `Ajuste de Segundo Grau: y = ${a.toFixed(2)}x² + ${b.toFixed(2)}x + ${c.toFixed(2)}`;
+    document.getElementById('result').innerText = `Segundo Grau: y = ${a.toFixed(2)}x² + ${b.toFixed(2)}x + ${c.toFixed(2)}`;
 
     clearCanvas();
     drawGrid();
